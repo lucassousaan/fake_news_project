@@ -8,9 +8,9 @@ with open("dataset/fake-news-data.csv", 'rt', encoding='utf8') as fileFake:
     counterFake = 0
     for rowFake in readerFake:
         if counterFake == 0:
-            writerCsv.writerow([rowFake[0], rowFake[1], rowFake[2], "label"])
+            writerCsv.writerow([rowFake[0], rowFake[1], rowFake[2], "is_fake_news"])
         else:
-            writerCsv.writerow([rowFake[0], rowFake[1], rowFake[2], "falsa"])
+            writerCsv.writerow([rowFake[0], rowFake[1], rowFake[2], "yes"])
         counterFake += 1
         if counterFake == 101:
             break
@@ -21,7 +21,7 @@ with open("dataset/true-news-data.csv", 'rt', encoding='utf8') as fileTrue:
     counterTrue = 0
     for rowTrue in readerTrue:
         if counterTrue > 0:
-            writerCsv.writerow([rowTrue[0], rowTrue[1], rowTrue[2], "verdadeira"])
+            writerCsv.writerow([rowTrue[0], rowTrue[1], rowTrue[2], "no"])
         counterTrue += 1
         if counterTrue == 101:
             break
