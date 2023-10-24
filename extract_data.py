@@ -1,4 +1,5 @@
 import csv
+import random
 
 csvFile = open('results/dataset_label.csv', 'w', newline='')
 writerCsv = csv.writer(csvFile)
